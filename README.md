@@ -18,3 +18,10 @@ RLE is the simplest compression scheme that still teaches the core tension of th
 ## Edge case
 
 Digits are ordinary characters. The string `555` encodes to `53`, which looks like the number fifty-three but is actually `5` (the character) followed by `3` (the count). The decoder reads exactly one character, then all following digits, so this is unambiguous in the codec. It is only confusing to a human reading the compressed form.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
