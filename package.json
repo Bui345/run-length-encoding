@@ -1,6 +1,6 @@
 {
   "name": "run-length-encoding",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Compresses and decompresses text by replacing repeated character runs with single characters and counts.",
   "type": "module",
   "main": "src/index.js",
